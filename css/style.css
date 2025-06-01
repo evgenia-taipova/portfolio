@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "Namu"; /* Название, которое ты будешь использовать */
-  src: url("../NAMU-typefaces2019/Web/NAMU-Pro.woff") format("woff"),
-    url("../NAMU-typefaces2019/Web/NAMU-Pro.woff2") format("woff2");
+  font-family: "Namu";
+  src: url("../NAMU-typefaces2019/Web/NAMU-Pro.woff2") format("woff2"),
+    url("../NAMU-typefaces2019/Web/NAMU-Pro.woff") format("woff");
 }
 
 :root {
@@ -364,9 +364,9 @@ section h2 {
 }
 /* Digitalist */
 .card-link:nth-child(1) .card-face {
-  background-image: url("/images/project1.png");
+  background-image: url("../images/project1.png");
   &:hover {
-    background-image: url("/images/project1-hover.png");
+    background-image: url("../images/project1-hover.png");
     padding-top: 16px;
     gap: 8px;
     h1 {
@@ -376,9 +376,9 @@ section h2 {
 }
 /* ArtCalculator */
 .card-link:nth-child(2) .card-face {
-  background-image: url("/images/project2.png");
+  background-image: url("../images/project2.png");
   &:hover {
-    background-image: url("/images/project2-hover.png");
+    background-image: url("../images/project2-hover.png");
     padding-top: 16px;
     gap: 8px;
     h1 {
@@ -389,9 +389,9 @@ section h2 {
 }
 /* FreshBlack */
 .card-link:nth-child(3) .card-face {
-  background-image: url("/images/project3.png");
+  background-image: url("../images/project3.png");
   &:hover {
-    background-image: url("/images/project3-hover.png");
+    background-image: url("../images/project3-hover.png");
     color: var(--background-color);
     padding-top: 16px;
     gap: 8px;
@@ -402,13 +402,13 @@ section h2 {
 }
 /* Pulesfit */
 .card-link:nth-child(4) .card-face {
-  background-image: url("/images/project4.png");
+  background-image: url("../images/project4.png");
 
   &:hover {
     color: var(--background-color);
     padding-top: 10px;
     gap: 4px;
-    background-image: url("/images/project4-hover.png");
+    background-image: url("../images/project4-hover.png");
     h1 {
       font-family: "Unbounded", sans-serif;
     }
@@ -416,14 +416,14 @@ section h2 {
 }
 /* Shelfiye */
 .card-link:nth-child(5) .card-face {
-  background-image: url("/images/project5.png");
+  background-image: url("../images/project5.png");
   padding-top: 16px;
   gap: 8px;
   &:hover {
     color: var(--background-color);
     padding-top: 16px;
     gap: 8px;
-    background-image: url("/images/project5-hover.png");
+    background-image: url("../images/project5-hover.png");
     h1 {
       font-family: "Namu", sans-serif;
     }
@@ -750,7 +750,6 @@ section h2 {
   margin: 10px 0;
   transition: all 0.1s ease-in-out;
 }
-
 
 .marquee {
   animation: scroll 20s linear infinite;
