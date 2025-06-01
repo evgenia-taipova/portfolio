@@ -37,18 +37,21 @@ body {
   border-image-slice: 1; /* обязательный параметр для отображения градиента */
   position: relative;
 
-  &:after {
+  &::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     height: 2px;
     width: 100%;
-    background: linear-gradient(
-      80.32deg,
-      #e63e21 17.97%,
-      rgba(230, 62, 33, 0) 48.49%
-    );
+    background: linear-gradient(to left, rgba(230, 62, 33, 0) 0%, #e63e21 100%);
+    background-size: 200% 100%;
+    background-position: right;
+    transition: background-position 0.5s ease;
+  }
+
+  &:hover::after {
+    background-position: left;
   }
 }
 .header .container {
@@ -138,6 +141,18 @@ h2 {
   top: 78px;
   left: 262px;
   z-index: -1;
+  animation: floatFlower 6s ease-in-out infinite;
+}
+@keyframes floatFlower {
+  0% {
+    transform: translateY(0px) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-5deg);
+  }
 }
 
 .main-left .ellipse {
@@ -147,6 +162,21 @@ h2 {
   height: 280px;
   rotate: 31.5deg;
   z-index: -2;
+  animation: pulseGradient 8s ease-in-out infinite;
+}
+@keyframes pulseGradient {
+  0% {
+    transform: scale(1) rotate(31.5deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05) rotate(33deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(31.5deg);
+    opacity: 0.8;
+  }
 }
 
 .main-list {
@@ -467,6 +497,7 @@ section h2 {
   z-index: 1;
   top: 0;
   left: 0;
+  animation: floatFlower 6s ease-in-out infinite;
 }
 
 .flower-img .ellipse {
@@ -622,15 +653,28 @@ section h2 {
     width: 262px;
     height: 251px;
     object-fit: contain;
+    animation: floatFlowerFooter 6s ease-in-out infinite;
   }
+
   .ellipse {
     position: absolute;
-    bottom: -16px;
+    bottom: -18px;
     left: 0;
     width: 400px;
     height: 400px;
     object-fit: contain;
     z-index: -1;
+  }
+}
+@keyframes floatFlowerFooter {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 
@@ -641,20 +685,110 @@ section h2 {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
 }
 .skills-list {
   display: flex;
   gap: 24px;
   align-items: center;
+
   span {
     text-transform: uppercase;
     font-family: Anton;
     font-size: 128px;
-
     line-height: 1;
-    margin: 0 auto;
+    margin: 0;
   }
 }
+
+.items-wrap {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 20px;
+}
+.items-wrap:before,
+.items-wrap:after {
+  content: "";
+  height: 100%;
+  top: 0;
+  width: 10%;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+.items-wrap:before {
+  left: 0;
+  background: linear-gradient(90deg, #161616 0%, rgba(255, 255, 255, 0) 100%);
+}
+.items-wrap:after {
+  right: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #161616 100%);
+}
+.items {
+  flex-shrink: 0;
+  display: flex;
+  gap: 20px;
+  counter-reset: item;
+  justify-content: space-around;
+  min-width: 100%;
+}
+.item {
+  background: #ccc;
+  flex: 0 0 auto;
+  width: 100px;
+  height: 100px;
+  counter-increment: item;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;
+  margin: 10px 0;
+  transition: all 0.1s ease-in-out;
+}
+
+
+.marquee {
+  animation: scroll 20s linear infinite;
+}
+.reverce {
+  animation-direction: reverse;
+}
+.items-wrap:hover .marquee {
+  animation-play-state: paused;
+}
+
+.perfscan {
+  margin: 20px 0;
+  text-align: center;
+  bottom: 0;
+  background: #fff;
+  padding: 5px;
+}
+.perfscan hr {
+  border: solid #999;
+  border-width: 1px 0 0 0;
+  max-width: 50%;
+  margin: 0 auto 20px;
+}
+.perfscan a {
+  color: #000;
+  font-weight: bold;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
 .skill-item {
   width: 239px;
   height: 80px;
@@ -826,11 +960,11 @@ section h2 {
 } */
 
 .animate-left {
-  animation: slideInLeft 0.7s ease-out forwards;
+  animation: slideInLeft 1.5s ease-out forwards;
 }
 
 .animate-right {
-  animation: slideInRight 0.7s ease-out forwards;
+  animation: slideInRight 1.5s ease-out forwards;
 }
 
 @keyframes slideInLeft {

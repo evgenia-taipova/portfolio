@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap"
       rel="stylesheet"
@@ -26,10 +24,10 @@
         <span>Iryna Kvitka</span>
         <nav>
           <ul>
-            <li><a href="">My projects</a></li>
-            <li><a href="">About me</a></li>
-            <li><a href="">Contacts</a></li>
-            <li><a href="">CV</a></li>
+            <li><a href="#projects">My projects</a></li>
+            <li><a href="#about">About me</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+            <li><a href="#cv">CV</a></li>
           </ul>
         </nav>
       </div>
@@ -69,7 +67,7 @@
         </div>
       </div>
     </section>
-    <section class="container">
+    <section class="container" id="projects">
       <h2>my <strong class="red">project</strong></h2>
       <div class="card-grid">
         <a href="#" class="card-link">
@@ -129,7 +127,7 @@
         </a>
       </div>
     </section>
-    <section class="container about-section">
+    <section class="container about-section" id="about">
       <div class="about-main">
         <h2><strong class="red">about</strong> me</h2>
         <div class="about">
@@ -174,40 +172,83 @@
       <div class="skills-block">
         <div class="skills-list">
           <span>hard</span>
-          <div class="skill-item one">UX Research</div>
-          <div class="skill-item two">CJM</div>
-          <div class="skill-item three">Prototyping</div>
-          <div class="skill-item four">Mind mapping</div>
-          <div></div>
+
+          <div class="items-wrap">
+            <div class="items marquee reverce">
+              <div class="skill-item one">UX Research</div>
+              <div class="skill-item two">CJM</div>
+              <div class="skill-item three">Prototyping</div>
+              <div class="skill-item four">Mind mapping</div>
+            </div>
+            <div aria-hidden="true" class="items marquee reverce">
+              <div class="skill-item one">UX Research</div>
+              <div class="skill-item two">CJM</div>
+              <div class="skill-item three">Prototyping</div>
+              <div class="skill-item four">Mind mapping</div>
+            </div>
+          </div>
         </div>
+
         <div class="skills-list">
-          <div class="skill-item five">User flows</div>
-          <div class="skill-item six">User interviews</div>
-          <div class="skill-item seven">User testing</div>
-          <div class="skill-item eight">Wireframing</div>
-          <div class="skill-item nine">Android</div>
+          <div class="items-wrap">
+            <div class="items marquee">
+              <div class="skill-item five">User flows</div>
+              <div class="skill-item six">User interviews</div>
+              <div class="skill-item seven">User testing</div>
+              <div class="skill-item eight">Wireframing</div>
+              <div class="skill-item nine">Android</div>
+            </div>
+            <div aria-hidden="true" class="items marquee">
+              <div class="skill-item five">User flows</div>
+              <div class="skill-item six">User interviews</div>
+              <div class="skill-item seven">User testing</div>
+              <div class="skill-item eight">Wireframing</div>
+              <div class="skill-item nine">Android</div>
+            </div>
+          </div>
         </div>
       </div>
       <h2 class="red">skills</h2>
       <div class="skills-block">
         <div class="skills-list">
-          <div class="skill-item ten">Problem Solving</div>
-          <div class="skill-item eleven">Critical thinking</div>
-          <div class="skill-item twelve">Communication</div>
-          <div class="skill-item thirteen">Collaboration</div>
+          <div class="items-wrap">
+            <div class="items marquee">
+              <div class="skill-item ten">Problem Solving</div>
+              <div class="skill-item eleven">Critical thinking</div>
+              <div class="skill-item twelve">Communication</div>
+              <div class="skill-item thirteen">Collaboration</div>
+            </div>
+            <div aria-hidden="true" class="items marquee">
+              <div class="skill-item ten">Problem Solving</div>
+              <div class="skill-item eleven">Critical thinking</div>
+              <div class="skill-item twelve">Communication</div>
+              <div class="skill-item thirteen">Collaboration</div>
+            </div>
+          </div>
           <span>soft</span>
         </div>
+
         <div class="skills-list">
           <span>tools</span>
-          <div class="skill-item fourteen">Figma</div>
-          <div class="skill-item fifteen">Canva</div>
-          <div class="skill-item sixteen">Mirro</div>
-          <div class="skill-item seventeen">Notion</div>
+          <div class="items-wrap">
+            <div class="items marquee reverce">
+              <div class="skill-item fourteen">Figma</div>
+              <div class="skill-item fifteen">Canva</div>
+              <div class="skill-item sixteen">Mirro</div>
+              <div class="skill-item seventeen">Notion</div>
+            </div>
+            <div aria-hidden="true" class="items marquee reverce">
+              <div class="skill-item fourteen">Figma</div>
+              <div class="skill-item fifteen">Canva</div>
+              <div class="skill-item sixteen">Mirro</div>
+              <div class="skill-item seventeen">Notion</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="container contacts-section">
+    <section class="container contacts-section" id="contacts">
       <div class="contacts">
         <h2><b class="red">let's</b> connect</h2>
 
@@ -239,24 +280,37 @@
     </footer>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                if (entry.target.classList.contains("about")) {
-                  entry.target.classList.add("animate-left");
-                } else if (entry.target.classList.contains("main-right")) {
-                  entry.target.classList.add("animate-right");
+        const animateOnScroll = () => {
+          const observer = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  if (entry.target.classList.contains("about")) {
+                    entry.target.classList.add("animate-left");
+                  } else if (entry.target.classList.contains("main-right")) {
+                    entry.target.classList.add("animate-right");
+                  }
+                  observer.unobserve(entry.target); // Отключаем после анимации
                 }
-                observer.unobserve(entry.target); // чтобы не повторялось
-              }
-            });
-          },
-          { threshold: 0.2 } // 20% блока видно — запускаем
-        );
+              });
+            },
+            {
+              threshold: 0.2,
+            }
+          );
 
-        const targets = document.querySelectorAll(".about, .main-right");
-        targets.forEach((target) => observer.observe(target));
+          const targets = document.querySelectorAll(".about, .main-right");
+          targets.forEach((target) => observer.observe(target));
+        };
+
+        // Отложим запуск, если якорь указан в URL
+        if (window.location.hash) {
+          setTimeout(() => {
+            animateOnScroll();
+          }, 300); // Подождать, пока браузер прокрутит
+        } else {
+          animateOnScroll();
+        }
       });
     </script>
   </body>
