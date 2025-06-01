@@ -1,0 +1,856 @@
+@font-face {
+  font-family: "Namu"; /* Название, которое ты будешь использовать */
+  src: url("../NAMU-typefaces2019/Web/NAMU-Pro.woff") format("woff"),
+    url("../NAMU-typefaces2019/Web/NAMU-Pro.woff2") format("woff2");
+}
+
+:root {
+  --primary-color: #e63e21;
+  --secondary-color: #c0c0c0;
+  --text-color: #fff;
+  --background-color: #161616;
+}
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1;
+  font-family: "Namu", sans-serif;
+  font-weight: 900;
+}
+.container {
+  margin: 0 auto;
+  max-width: calc(1380px + 4rem);
+  padding: 0 2rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+.header {
+  text-transform: uppercase;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  border-bottom: 2px solid transparent; /* важно: transparent, чтобы видеть градиент */
+  border-image-source: linear-gradient(0deg, #262626, #262626),
+    linear-gradient(80.32deg, #e63e21 17.97%, rgba(230, 62, 33, 0) 48.49%);
+  border-image-slice: 1; /* обязательный параметр для отображения градиента */
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(
+      80.32deg,
+      #e63e21 17.97%,
+      rgba(230, 62, 33, 0) 48.49%
+    );
+  }
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  li {
+    padding: 10px;
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}
+h2 {
+  font-size: 200px;
+  line-height: 150%;
+}
+
+.main .container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.img-border {
+  padding: 4px;
+  border-radius: 8px;
+  background: linear-gradient(67.22deg, #e63e21 -2.1%, #262626 19.33%);
+  display: inline-block;
+}
+.main-right {
+  max-width: 435px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p {
+    line-height: 1.5;
+  }
+  opacity: 0;
+}
+
+.main-right img {
+  max-width: 435px;
+  width: 100%;
+
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  max-width: 435px;
+}
+
+.main-left {
+  position: relative;
+  h1 {
+    text-transform: uppercase;
+    font-family: Anton;
+    font-weight: 400;
+    font-size: 220px;
+    line-height: 1;
+    leading-trim: Cap height;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  p.ux {
+    text-transform: uppercase;
+    font-family: Anton;
+    font-weight: 400;
+    font-size: 96px;
+    leading-trim: Cap height;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  img {
+    position: absolute;
+  }
+}
+.main-left .flower {
+  top: 78px;
+  left: 262px;
+  z-index: -1;
+}
+
+.main-left .ellipse {
+  top: 68px;
+  left: 242px;
+  width: 280px;
+  height: 280px;
+  rotate: 31.5deg;
+  z-index: -2;
+}
+
+.main-list {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: start;
+  margin-top: 30px;
+}
+
+.main-item {
+  background: linear-gradient(0deg, #1b1b1b, #1b1b1b);
+  border: 2px solid transparent;
+  border-image-source: linear-gradient(
+    351.49deg,
+    #e63e21 -12.34%,
+    rgba(230, 62, 33, 0) 38.6%
+  );
+  border-image-slice: 1;
+  padding: 10px 25px;
+  font-size: 20px;
+  color: var(--secondary-color);
+}
+
+/* .main-item {
+  --border-width: 2px;
+  --radius: 8px;
+  --angle: 0turn;
+
+  position: relative;
+  background: #1b1b1b;
+  border-radius: var(--radius);
+  border: var(--border-width) solid transparent;
+  color: var(--secondary-color);
+  padding: 10px 25px;
+  font-size: 20px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.main-item::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--border-width) * -1);
+  border-radius: var(--radius);
+  border: var(--border-width) solid transparent;
+  background-image: linear-gradient(0deg, #262626, #262626),
+    conic-gradient(from var(--angle), #e63e21 0%, rgba(230, 62, 33, 0) 33.3%);
+  background-origin: border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+
+  animation: spin 3s linear infinite;
+} */
+
+.main-item:hover::before {
+  animation-play-state: paused;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+@keyframes spin {
+  to {
+    --angle: 1turn;
+  }
+}
+
+.main-item:nth-child(2) {
+  border-image-source: linear-gradient(
+    8.77deg,
+    #e63e21 -19.31%,
+    rgba(230, 62, 33, 0) 60.21%
+  );
+}
+
+.main-item:nth-child(3) {
+  border-image-source: linear-gradient(
+    335.63.77deg,
+    #e63e21 -12.34%,
+    rgba(230, 62, 33, 0) 38.6%
+  );
+}
+.main-item:nth-child(4) {
+  border-image-source: linear-gradient(
+    367.03deg,
+    #e63e21 -4.12%,
+    rgba(230, 62, 33, 0) 64.68%
+  );
+}
+
+.red {
+  color: var(--primary-color);
+}
+
+.large {
+  font-size: 32px;
+  line-height: 150%;
+}
+
+.xl {
+  font-size: 96px;
+  line-height: 150%;
+}
+section.container {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+section h2 {
+  text-transform: uppercase;
+  font-family: Anton;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+  gap: 20px;
+}
+.card-link {
+  display: inline-block;
+  padding: 4px;
+  border-radius: 8px;
+  background: linear-gradient(67.22deg, #e63e21 -2.1%, #262626 19.33%);
+  overflow: hidden; /* обрезаем углы */
+  text-decoration: none;
+  color: inherit;
+  width: 440px; /* фиксируем ширину */
+  height: 312px; /* фиксируем высоту */
+  box-sizing: border-box;
+}
+
+.card-face {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+  padding: 26px 16px;
+  text-align: left;
+
+  /* transition: background-image 0.5s ease, color 0.5s ease; */
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.card-face:hover {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.card-face h1 {
+  font-size: 64px;
+  line-height: 1;
+  font-family: Anton, sans-serif;
+  text-transform: uppercase;
+}
+
+.card-face p {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.card-face p.text {
+  color: var(--secondary-color);
+  font-size: 12px;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.card-link .card-face:hover p.text {
+  display: none;
+}
+/* Digitalist */
+.card-link:nth-child(1) .card-face {
+  background-image: url("/images/project1.png");
+  &:hover {
+    background-image: url("/images/project1-hover.png");
+    padding-top: 16px;
+    gap: 8px;
+    h1 {
+      font-family: "IBM Plex Sans", sans-serif;
+    }
+  }
+}
+/* ArtCalculator */
+.card-link:nth-child(2) .card-face {
+  background-image: url("/images/project2.png");
+  &:hover {
+    background-image: url("/images/project2-hover.png");
+    padding-top: 16px;
+    gap: 8px;
+    h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 40px;
+    }
+  }
+}
+/* FreshBlack */
+.card-link:nth-child(3) .card-face {
+  background-image: url("/images/project3.png");
+  &:hover {
+    background-image: url("/images/project3-hover.png");
+    color: var(--background-color);
+    padding-top: 16px;
+    gap: 8px;
+    h1 {
+      font-family: "Antonio", sans-serif;
+    }
+  }
+}
+/* Pulesfit */
+.card-link:nth-child(4) .card-face {
+  background-image: url("/images/project4.png");
+
+  &:hover {
+    color: var(--background-color);
+    padding-top: 10px;
+    gap: 4px;
+    background-image: url("/images/project4-hover.png");
+    h1 {
+      font-family: "Unbounded", sans-serif;
+    }
+  }
+}
+/* Shelfiye */
+.card-link:nth-child(5) .card-face {
+  background-image: url("/images/project5.png");
+  padding-top: 16px;
+  gap: 8px;
+  &:hover {
+    color: var(--background-color);
+    padding-top: 16px;
+    gap: 8px;
+    background-image: url("/images/project5-hover.png");
+    h1 {
+      font-family: "Namu", sans-serif;
+    }
+  }
+}
+
+/* About me  */
+
+.about-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  position: relative;
+  display: flex;
+}
+.about-main {
+  display: flex;
+  flex-direction: column;
+}
+.about {
+  display: flex;
+  align-items: end;
+  gap: 30px;
+  justify-content: space-between;
+  max-width: 920px;
+  position: relative;
+
+  opacity: 0;
+  transform: translateX(0);
+}
+
+.about img {
+  max-height: 420px;
+  border-radius: 8px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  line-height: 1.5;
+}
+.about-flower {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 462px;
+  margin-left: 20px;
+}
+.about-flower p {
+  color: #595959;
+}
+.flower-img {
+  position: relative;
+  width: 462px;
+  height: 347px; /* Убедись, что высота соответствует реальному размеру цветка */
+  margin-bottom: 20px; /* Чтобы текст не прилипал */
+  margin-top: 130px;
+}
+
+.flower-img .flower,
+.flower-img .ellipse {
+  position: absolute;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.flower-img .flower {
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.flower-img .ellipse {
+  z-index: 0;
+  width: 700px;
+  height: 700px;
+  left: -36%;
+  top: -60%;
+}
+
+/* Contact */
+.contacts-section {
+  display: flex;
+  justify-content: end;
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: fit-content;
+  > * {
+    width: fit-content;
+  }
+  p {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+}
+/* 
+.contact-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 2px solid #802515;
+  border-radius: 8px;
+  background: #1b1b1b;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.contact-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    302.22deg,
+    rgba(51, 19, 14, 0) 47.59%,
+    #e63e21 107.64%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: -1;
+}
+
+.contact-link:hover::before {
+  opacity: 1;
+} */
+.contacts-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 42px;
+}
+.contact-link {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  place-content: center;
+  color: white;
+  text-shadow: 0 1px 0 #000;
+  padding: 10px 20px;
+
+  --border-angle: -70deg;
+
+  /* По умолчанию просто однотонный фон */
+  background: #161616;
+
+  border: solid 2px transparent;
+  border-radius: 1px;
+
+  --gradient-border: conic-gradient(
+    from var(--border-angle),
+    transparent 25%,
+    #262626 43.36%,
+    #e63e21 99%,
+    transparent
+  );
+
+  /* чтобы бордер всегда показывался с градиентом */
+  border-image-source: var(--gradient-border);
+  border-image-slice: 1;
+  border-style: solid;
+  border-width: 2px;
+
+  background-position: center center;
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* При ховере меняем фон на конусный градиент */
+.contact-link:hover {
+  --main-bg: conic-gradient(
+    from var(--border-angle),
+    #b0461a,
+    #222222 5%,
+    #222222 60%,
+    #b0461a 95%
+  );
+
+  background: var(--main-bg) padding-box, var(--gradient-border) border-box;
+  animation: bg-spin 3s linear infinite;
+}
+
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 90px;
+  padding-bottom: 16px;
+}
+.footer-links {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 30px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.footer-flower {
+  position: relative;
+  .flower {
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 262px;
+    height: 251px;
+    object-fit: contain;
+  }
+  .ellipse {
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    z-index: -1;
+  }
+}
+
+.skills-section h2 {
+  text-align: center;
+}
+.skills-block {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.skills-list {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  span {
+    text-transform: uppercase;
+    font-family: Anton;
+    font-size: 128px;
+
+    line-height: 1;
+    margin: 0 auto;
+  }
+}
+.skill-item {
+  width: 239px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--secondary-color);
+  border: 2px solid;
+  background-blend-mode: overlay;
+}
+
+.skill-item.one,
+.skill-item.ten {
+  /* Только 1 градиент для бордера */
+  border-image: linear-gradient(
+      248.03deg,
+      #e63e21 -7.5%,
+      rgba(230, 62, 33, 0) 35.14%
+    )
+    1;
+
+  /* Фон */
+  background: linear-gradient(0deg, #1b1b1b, #1b1b1b),
+    linear-gradient(
+      252.18deg,
+      rgba(230, 62, 33, 0.2) -4.57%,
+      rgba(51, 19, 14, 0) 27.31%
+    );
+}
+
+.skill-item.two,
+.skill-item.eleven {
+  border-image: linear-gradient(
+      251.98deg,
+      #e63e21 1.99%,
+      rgba(230, 62, 33, 0) 41.51%
+    )
+    1;
+
+  background: linear-gradient(0deg, #1b1b1b, #1b1b1b),
+    linear-gradient(
+      256.19deg,
+      rgba(230, 62, 33, 0.2) 3.88%,
+      rgba(51, 19, 14, 0) 25.41%
+    );
+}
+.skill-item.three,
+.skill-item.twelve {
+  background: linear-gradient(0deg, #1b1b1b, #1b1b1b),
+    linear-gradient(
+      118.12deg,
+      rgba(230, 62, 33, 0.2) 1.92%,
+      rgba(51, 19, 14, 0) 31.82%
+    );
+
+  border-image: linear-gradient(
+      103.87deg,
+      #e63e21 9.44%,
+      rgba(230, 62, 33, 0) 30.65%
+    )
+    1;
+}
+.skill-item.four,
+.skill-item.thirteen {
+  background: linear-gradient(0deg, #1b1b1b, #1b1b1b),
+    linear-gradient(
+      148.31deg,
+      rgba(230, 62, 33, 0.2) -2.71%,
+      rgba(51, 19, 14, 0) 34.57%
+    );
+
+  border-image: linear-gradient(
+      125.93deg,
+      #e63e21 8.04%,
+      rgba(230, 62, 33, 0) 32.76%
+    )
+    1;
+}
+.skill-item.five,
+.skill-item.fourteen {
+  background: linear-gradient(0deg, #1b1b1b, #1b1b1b),
+    linear-gradient(
+      263.11deg,
+      rgba(230, 62, 33, 0.2) -5.48%,
+      rgba(51, 19, 14, 0) 40.48%
+    );
+
+  border-image: linear-gradient(
+      300.18deg,
+      #e63e21 -2.13%,
+      rgba(230, 62, 33, 0) 32.08%
+    )
+    1;
+}
+.skill-item.six,
+.skill-item.fifteen {
+  background: linear-gradient(0deg, #1b1b1b, #1b1b1b),
+    linear-gradient(
+      255.95deg,
+      rgba(230, 62, 33, 0.2) 2.18%,
+      rgba(51, 19, 14, 0) 29.61%
+    );
+
+  border-image: linear-gradient(
+      334.14deg,
+      #e63e21 14.29%,
+      rgba(230, 62, 33, 0) 29.71%
+    )
+    1;
+}
+.skill-item.seven,
+.skill-item.sixteen {
+  background: linear-gradient(0deg, #1b1b1b, #1b1b1b),
+    linear-gradient(
+      108.11deg,
+      rgba(230, 62, 33, 0.2) -4.29%,
+      rgba(51, 19, 14, 0) 27.71%
+    );
+
+  border-image: linear-gradient(
+      340.89deg,
+      #e63e21 39.92%,
+      rgba(230, 62, 33, 0) 58.98%
+    )
+    1;
+}
+.skill-item.eight,
+.skill-item.seventeen {
+  background: linear-gradient(0deg, #1b1b1b, #1b1b1b),
+    linear-gradient(
+      114.21deg,
+      rgba(230, 62, 33, 0.2) -4.72%,
+      rgba(51, 19, 14, 0) 32.09%
+    );
+  border: 2px solid;
+
+  border-image: linear-gradient(
+      68.17deg,
+      #e63e21 9.36%,
+      rgba(230, 62, 33, 0) 28.79%
+    )
+    1;
+}
+.skill-item.nine {
+  background: linear-gradient(0deg, #1b1b1b, #1b1b1b),
+    linear-gradient(
+      106.85deg,
+      rgba(230, 62, 33, 0.2) 0%,
+      rgba(51, 19, 14, 0) 24.42%
+    );
+
+  border-image: linear-gradient(
+      30.57deg,
+      #e63e21 4.3%,
+      rgba(230, 62, 33, 0) 54.1%
+    )
+    1;
+}
+/* .skill-item.ten {
+}.skill-item.eleven {
+}.skill-item.twelve {
+}.skill-item.thirteen {
+}.skill-item.fourteen {
+}.skill-item.fifteen {
+}.skill-item.sixteen {
+}.skill-item.seventeen {
+} */
+
+.animate-left {
+  animation: slideInLeft 0.7s ease-out forwards;
+}
+
+.animate-right {
+  animation: slideInRight 0.7s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
