@@ -1,7 +1,12 @@
 @font-face {
   font-family: "Namu";
   src: url("../NAMU-typefaces2019/Web/NAMU-Pro.woff2") format("woff2"),
-    url("../NAMU-typefaces2019/Web/NAMU-Pro.woff") format("woff");
+    url("../NAMU-typefaces2019/Web/NAMU-Pro.woff") format("woff"),
+    url("../NAMU-typefaces2019/Desktop/NAMU-Pro.ttf") format("truetype"),
+    url("../NAMU-typefaces2019/Desktop/NAMU-Pro.otf") format("opentype"),
+    url("../NAMU-typefaces2019/Web/NAMU-1850.woff2") format("woff2"),
+    url("../NAMU-typefaces2019/Web/NAMU-1850.woff") format("woff"),
+    url("../NAMU-typefaces2019/Web/NAMU-1850.eot") format("embedded-opentype");
 }
 
 :root {
@@ -74,6 +79,11 @@ body {
 h2 {
   font-size: 200px;
   line-height: 150%;
+  font-weight: 300;
+  strong,
+  b {
+    font-weight: 300;
+  }
 }
 
 .main .container {
@@ -113,8 +123,9 @@ h2 {
   position: relative;
   h1 {
     text-transform: uppercase;
-    font-family: Anton;
+    font-family: "Anton", sans-serif;
     font-weight: 400;
+    font-style: normal;
     font-size: 220px;
     line-height: 1;
     leading-trim: Cap height;
@@ -124,11 +135,12 @@ h2 {
   }
   p.ux {
     text-transform: uppercase;
-    font-family: Anton;
+    font-family: "Anton", sans-serif;
     font-weight: 400;
+    font-style: normal;
     font-size: 96px;
     leading-trim: Cap height;
-    line-height: 150%;
+    line-height: 130%;
     letter-spacing: 0%;
     vertical-align: middle;
     text-transform: uppercase;
@@ -188,17 +200,30 @@ h2 {
 }
 
 .main-item {
-  background: linear-gradient(0deg, #1b1b1b, #1b1b1b);
-  border: 2px solid transparent;
-  border-image-source: linear-gradient(
+  position: relative;
+  padding: 10px 25px;
+  font-size: 20px;
+  color: var(--secondary-color);
+  background: #1b1b1b;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.main-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* толщина рамки */
+  background: linear-gradient(
     351.49deg,
     #e63e21 -12.34%,
     rgba(230, 62, 33, 0) 38.6%
   );
-  border-image-slice: 1;
-  padding: 10px 25px;
-  font-size: 20px;
-  color: var(--secondary-color);
+  border-radius: 4px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
 }
 
 /* .main-item {
@@ -234,7 +259,7 @@ h2 {
   animation: spin 3s linear infinite;
 } */
 
-.main-item:hover::before {
+/* .main-item:hover::before {
   animation-play-state: paused;
 }
 
@@ -248,25 +273,26 @@ h2 {
   to {
     --angle: 1turn;
   }
-}
+} */
 
-.main-item:nth-child(2) {
-  border-image-source: linear-gradient(
+.main-item:nth-child(2)::before {
+  background: linear-gradient(
     8.77deg,
     #e63e21 -19.31%,
     rgba(230, 62, 33, 0) 60.21%
   );
 }
 
-.main-item:nth-child(3) {
-  border-image-source: linear-gradient(
-    335.63.77deg,
+.main-item:nth-child(3)::before {
+  background: linear-gradient(
+    335.63deg,
     #e63e21 -12.34%,
     rgba(230, 62, 33, 0) 38.6%
   );
 }
-.main-item:nth-child(4) {
-  border-image-source: linear-gradient(
+
+.main-item:nth-child(4)::before {
+  background: linear-gradient(
     367.03deg,
     #e63e21 -4.12%,
     rgba(230, 62, 33, 0) 64.68%
@@ -292,7 +318,9 @@ section.container {
 }
 section h2 {
   text-transform: uppercase;
-  font-family: Anton;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .card-grid {
@@ -343,7 +371,10 @@ section h2 {
 .card-face h1 {
   font-size: 64px;
   line-height: 1;
-  font-family: Anton, sans-serif;
+  font-weight: 300;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   text-transform: uppercase;
 }
 
@@ -437,6 +468,7 @@ section h2 {
   padding-bottom: 90px;
   position: relative;
   display: flex;
+  overflow: hidden;
 }
 .about-main {
   display: flex;
@@ -564,7 +596,38 @@ section h2 {
   justify-content: center;
   margin-top: 42px;
 }
+/* .contact-link {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid #802515;
+    border-radius: 4px
+}*/
+
 .contact-link {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid #802515;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-link:hover {
+  background: #1b1b1b;
+  color: #e63e21;
+  text-decoration: none;
+  box-shadow: 0 0 8px 2px #e63e21;
+}
+
+/* .contact-link {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -576,7 +639,6 @@ section h2 {
 
   --border-angle: -70deg;
 
-  /* По умолчанию просто однотонный фон */
   background: #161616;
 
   border: solid 2px transparent;
@@ -590,7 +652,6 @@ section h2 {
     transparent
   );
 
-  /* чтобы бордер всегда показывался с градиентом */
   border-image-source: var(--gradient-border);
   border-image-slice: 1;
   border-style: solid;
@@ -601,7 +662,6 @@ section h2 {
   background-clip: padding-box, border-box;
 }
 
-/* При ховере меняем фон на конусный градиент */
 .contact-link:hover {
   --main-bg: conic-gradient(
     from var(--border-angle),
@@ -614,6 +674,11 @@ section h2 {
   background: var(--main-bg) padding-box, var(--gradient-border) border-box;
   animation: bg-spin 3s linear infinite;
 }
+.contact-link.btn:hover {
+  background: var(--text-color);
+  color: var(--primary-color);
+  animation: none;
+}
 
 @keyframes bg-spin {
   to {
@@ -625,7 +690,7 @@ section h2 {
   syntax: "<angle>";
   inherits: true;
   initial-value: 0turn;
-}
+} */
 
 /* Footer */
 
@@ -694,7 +759,9 @@ section h2 {
 
   span {
     text-transform: uppercase;
-    font-family: Anton;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 128px;
     line-height: 1;
     margin: 0;
@@ -789,6 +856,236 @@ section h2 {
 }
 
 .skill-item {
+  position: relative;
+  width: 239px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--secondary-color);
+  border-radius: 4px;
+  background: #1b1b1b;
+  z-index: 1;
+  overflow: hidden;
+  /* background: linear-gradient(
+      252.18deg,
+      rgba(230, 62, 33, 0.2) -4.57%,
+      rgba(51, 19, 14, 0) 27.31%
+    ),
+    #1b1b1b; */
+}
+
+/* Обёртка градиентной рамки */
+.skill-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 4px;
+  z-index: -1;
+
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Градиенты для каждой группы */
+.skill-item.one::before,
+.skill-item.ten::before {
+  background: linear-gradient(
+    248.03deg,
+    #e63e21 -7.5%,
+    rgba(230, 62, 33, 0) 35.14%
+  );
+}
+
+.skill-item.two::before,
+.skill-item.eleven::before {
+  background: linear-gradient(
+    251.98deg,
+    #e63e21 1.99%,
+    rgba(230, 62, 33, 0) 41.51%
+  );
+}
+
+.skill-item.three::before,
+.skill-item.twelve::before {
+  background: linear-gradient(
+    103.87deg,
+    #e63e21 9.44%,
+    rgba(230, 62, 33, 0) 30.65%
+  );
+}
+
+.skill-item.one::before,
+.skill-item.ten::before {
+  background: linear-gradient(
+    248.03deg,
+    #e63e21 -7.5%,
+    rgba(230, 62, 33, 0) 35.14%
+  );
+}
+
+.skill-item.two::before,
+.skill-item.eleven::before {
+  background: linear-gradient(
+    251.98deg,
+    #e63e21 1.99%,
+    rgba(230, 62, 33, 0) 41.51%
+  );
+}
+
+.skill-item.three::before,
+.skill-item.twelve::before {
+  background: linear-gradient(
+    103.87deg,
+    #e63e21 9.44%,
+    rgba(230, 62, 33, 0) 30.65%
+  );
+}
+
+.skill-item.four::before,
+.skill-item.thirteen::before {
+  background: linear-gradient(
+    125.93deg,
+    #e63e21 8.04%,
+    rgba(230, 62, 33, 0) 32.76%
+  );
+}
+
+.skill-item.five::before,
+.skill-item.fourteen::before {
+  background: linear-gradient(
+    300.18deg,
+    #e63e21 -2.13%,
+    rgba(230, 62, 33, 0) 32.08%
+  );
+}
+
+.skill-item.six::before,
+.skill-item.fifteen::before {
+  background: linear-gradient(
+    334.14deg,
+    #e63e21 14.29%,
+    rgba(230, 62, 33, 0) 29.71%
+  );
+}
+
+.skill-item.seven::before,
+.skill-item.sixteen::before {
+  background: linear-gradient(
+    340.89deg,
+    #e63e21 39.92%,
+    rgba(230, 62, 33, 0) 58.98%
+  );
+}
+
+.skill-item.eight::before,
+.skill-item.seventeen::before {
+  background: linear-gradient(
+    68.17deg,
+    #e63e21 9.36%,
+    rgba(230, 62, 33, 0) 28.79%
+  );
+}
+
+.skill-item.nine::before {
+  background: linear-gradient(
+    30.57deg,
+    #e63e21 4.3%,
+    rgba(230, 62, 33, 0) 54.1%
+  );
+}
+
+.skill-item.one,
+.skill-item.ten {
+  background: linear-gradient(
+    252.18deg,
+    rgba(230, 62, 33, 0.2) -4.57%,
+    rgba(51, 19, 14, 0) 27.31%
+  );
+}
+
+.skill-item.two,
+.skill-item.eleven {
+  background: linear-gradient(
+    256.19deg,
+    rgba(230, 62, 33, 0.2) 3.88%,
+    rgba(51, 19, 14, 0) 25.41%
+  );
+}
+
+.skill-item.three,
+.skill-item.twelve {
+  background: linear-gradient(
+    118.12deg,
+    rgba(230, 62, 33, 0.2) 1.92%,
+    rgba(51, 19, 14, 0) 31.82%
+  );
+}
+
+.skill-item.four,
+.skill-item.thirteen {
+  background: linear-gradient(
+      148.31deg,
+      rgba(230, 62, 33, 0.2) -2.71%,
+      rgba(51, 19, 14, 0) 34.57%
+    ),
+    #1b1b1b;
+}
+
+.skill-item.five,
+.skill-item.fourteen {
+  background: linear-gradient(
+      263.11deg,
+      rgba(230, 62, 33, 0.2) -5.48%,
+      rgba(51, 19, 14, 0) 40.48%
+    ),
+    #1b1b1b;
+}
+
+.skill-item.six,
+.skill-item.fifteen {
+  background: linear-gradient(
+      255.95deg,
+      rgba(230, 62, 33, 0.2) 2.18%,
+      rgba(51, 19, 14, 0) 29.61%
+    ),
+    #1b1b1b;
+}
+
+.skill-item.seven,
+.skill-item.sixteen {
+  background: linear-gradient(
+      108.11deg,
+      rgba(230, 62, 33, 0.2) -4.29%,
+      rgba(51, 19, 14, 0) 27.71%
+    ),
+    #1b1b1b;
+}
+
+.skill-item.eight,
+.skill-item.seventeen {
+  background: linear-gradient(
+      114.21deg,
+      rgba(230, 62, 33, 0.2) -4.72%,
+      rgba(51, 19, 14, 0) 32.09%
+    ),
+    #1b1b1b;
+}
+
+.skill-item.nine {
+  background: linear-gradient(
+      106.85deg,
+      rgba(230, 62, 33, 0.2) 0%,
+      rgba(51, 19, 14, 0) 24.42%
+    ),
+    #1b1b1b;
+}
+
+/* .skill-item {
   width: 239px;
   height: 80px;
   display: flex;
@@ -799,11 +1096,40 @@ section h2 {
   color: var(--secondary-color);
   border: 2px solid;
   background-blend-mode: overlay;
+  border-radius: 4px;
+}
+.skill-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 2px;
+  z-index: -1;
+
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
 .skill-item.one,
 .skill-item.ten {
-  /* Только 1 градиент для бордера */
+  background: linear-gradient(0deg, #1b1b1b, #1b1b1b),
+    linear-gradient(
+      252.18deg,
+      rgba(230, 62, 33, 0.2) -4.57%,
+      rgba(51, 19, 14, 0) 27.31%
+    );
+}
+.skill-item.one::before,
+.skill-item.ten::before {
+  background: linear-gradient(
+    248.03deg,
+    #e63e21 -7.5%,
+    rgba(230, 62, 33, 0) 35.14%
+  );
+}
+.skill-item.one,
+.skill-item.ten {
   border-image: linear-gradient(
       248.03deg,
       #e63e21 -7.5%,
@@ -811,7 +1137,6 @@ section h2 {
     )
     1;
 
-  /* Фон */
   background: linear-gradient(0deg, #1b1b1b, #1b1b1b),
     linear-gradient(
       252.18deg,
@@ -947,7 +1272,7 @@ section h2 {
       rgba(230, 62, 33, 0) 54.1%
     )
     1;
-}
+} */
 /* .skill-item.ten {
 }.skill-item.eleven {
 }.skill-item.twelve {
