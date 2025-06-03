@@ -286,16 +286,16 @@
               entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                   if (entry.target.classList.contains("about")) {
-                    entry.target.classList.add("animate-left");
+                    entry.target.classList.add("animate-up");
                   } else if (entry.target.classList.contains("main-right")) {
-                    entry.target.classList.add("animate-right");
+                    entry.target.classList.add("animate-up");
                   }
                   observer.unobserve(entry.target); // Отключаем после анимации
                 }
               });
             },
             {
-              threshold: 0.2,
+              threshold: 0.3,
             }
           );
 

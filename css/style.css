@@ -1,10 +1,12 @@
 @font-face {
   font-family: "NAMU Pro";
-  src: url("../NAMU-typefaces2019/Web/NAMU-Pro.woff2") format("woff2"),
+  src: 
+  /* url("../NAMU-typefaces2019/Web/NAMU-Pro.woff2") format("woff2"),
     url("../NAMU-typefaces2019/Web/NAMU-Pro.woff") format("woff"),
     url("../NAMU-typefaces2019/Desktop/NAMU-Pro.ttf") format("truetype"),
     url("../NAMU-typefaces2019/Desktop/NAMU-Pro.otf") format("opentype"),
-    url("../NAMU/NAMU-Pro.ttf") format("truetype");
+    url("../NAMU/NAMU-Pro.ttf") format("truetype"), */ url("../NAMU-Pro.otf")
+    format("opentype");
 }
 
 :root {
@@ -1275,6 +1277,20 @@ section h2 {
 }.skill-item.seventeen {
 } */
 
+.animate-up {
+  animation: slideInUp 2s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .animate-left {
   animation: slideInLeft 1.5s ease-out forwards;
 }
