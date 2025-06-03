@@ -415,6 +415,7 @@ section h2 {
     h1 {
       font-family: "Montserrat", sans-serif;
       font-size: 40px;
+      font-weight: 800;
     }
   }
 }
@@ -442,6 +443,7 @@ section h2 {
     background-image: url("../images/project4-hover.png");
     h1 {
       font-family: "Unbounded", sans-serif;
+      font-weight: 700;
     }
   }
 }
