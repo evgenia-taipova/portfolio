@@ -470,6 +470,9 @@ section h2 {
   display: flex;
   overflow: hidden;
 }
+.about-section.container {
+  padding-right: 1rem;
+}
 .about-main {
   display: flex;
   flex-direction: column;
@@ -503,7 +506,7 @@ section h2 {
   align-items: center;
   text-align: center;
   max-width: 462px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .about-flower p {
   color: #595959;
