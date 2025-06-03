@@ -1,12 +1,10 @@
 @font-face {
-  font-family: "Namu";
-  src: url("../NAMU-typefaces2019/Web/NAMU-Pro.woff2") format("woff2"),
+  font-family: "NAMU Pro";
+  /* src: url("../NAMU-typefaces2019/Web/NAMU-Pro.woff2") format("woff2"),
     url("../NAMU-typefaces2019/Web/NAMU-Pro.woff") format("woff"),
     url("../NAMU-typefaces2019/Desktop/NAMU-Pro.ttf") format("truetype"),
-    url("../NAMU-typefaces2019/Desktop/NAMU-Pro.otf") format("opentype"),
-    url("../NAMU-typefaces2019/Web/NAMU-1850.woff2") format("woff2"),
-    url("../NAMU-typefaces2019/Web/NAMU-1850.woff") format("woff"),
-    url("../NAMU-typefaces2019/Web/NAMU-1850.eot") format("embedded-opentype");
+    url("../NAMU-typefaces2019/Desktop/NAMU-Pro.otf") format("opentype"); */
+  src: url("../NAMU/NAMU-Pro.ttf") format("truetype");
 }
 
 :root {
@@ -20,8 +18,7 @@ body {
   color: var(--text-color);
   font-size: 15px;
   line-height: 1;
-  font-family: "Namu", sans-serif;
-  font-weight: 900;
+  font-family: "NAMU Pro", sans-serif;
 }
 .container {
   margin: 0 auto;
@@ -79,7 +76,7 @@ body {
 h2 {
   font-size: 200px;
   line-height: 150%;
-  font-weight: 300;
+  /* font-weight: 300; */
   strong,
   b {
     font-weight: 300;
@@ -150,7 +147,7 @@ h2 {
   }
 }
 .main-left .flower {
-  top: 78px;
+  top: 60px;
   left: 262px;
   z-index: -1;
   animation: floatFlower 6s ease-in-out infinite;
@@ -456,7 +453,7 @@ section h2 {
     gap: 8px;
     background-image: url("../images/project5-hover.png");
     h1 {
-      font-family: "Namu", sans-serif;
+      font-family: "NAMU Pro", sans-serif;
     }
   }
 }
@@ -607,7 +604,7 @@ section h2 {
     border-radius: 4px
 }*/
 
-.contact-link {
+/* .contact-link {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -625,9 +622,9 @@ section h2 {
   color: #e63e21;
   text-decoration: none;
   box-shadow: 0 0 8px 2px #e63e21;
-}
+} */
 
-/* .contact-link {
+.contact-link {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -674,11 +671,6 @@ section h2 {
   background: var(--main-bg) padding-box, var(--gradient-border) border-box;
   animation: bg-spin 3s linear infinite;
 }
-.contact-link.btn:hover {
-  background: var(--text-color);
-  color: var(--primary-color);
-  animation: none;
-}
 
 @keyframes bg-spin {
   to {
@@ -690,7 +682,7 @@ section h2 {
   syntax: "<angle>";
   inherits: true;
   initial-value: 0turn;
-} */
+}
 
 /* Footer */
 
