@@ -6,7 +6,8 @@
     url("../NAMU-typefaces2019/Desktop/NAMU-Pro.ttf") format("truetype"),
     url("../NAMU-typefaces2019/Desktop/NAMU-Pro.otf") format("opentype"),
     url("../NAMU/NAMU-Pro.ttf") format("truetype"), */ url("../NAMU-Pro.otf")
-    format("opentype");
+      format("opentype"),
+    url(../NAMU-Pro.ttf) format("truetype");
 }
 
 :root {
