@@ -1,0 +1,42 @@
+:root {
+  --primary-color: #e63e21;
+  --secondary-color: #c0c0c0;
+  --text-color: #fff;
+  --background-color: #161616;
+}
+
+.header {
+  text-transform: uppercase;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  border-bottom: 2px solid transparent; /* важно: transparent, чтобы видеть градиент */
+  border-image-source: linear-gradient(0deg, #262626, #262626),
+    linear-gradient(80.32deg, #e63e21 17.97%, rgba(230, 62, 33, 0) 48.49%);
+
+  border-image-slice: 1; /* обязательный параметр для отображения градиента */
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to left, rgba(230, 62, 33, 0) 0%, #e63e21 100%);
+
+    background-size: 200% 100%;
+    background-position: right;
+    transition: background-position 0.5s ease;
+  }
+
+  &:hover::after {
+    background-position: left;
+  }
+}
+
+h2 {
+  font-size: 200px;
+}
