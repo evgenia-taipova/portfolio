@@ -45,7 +45,7 @@
       <div class="top-text">
         <div class="top-text-content">
           <h2 class="accent-header">FREsH BLACK</h2>
-          <p>
+          <p class="animate-left">
             Fresh Black offers a range of coffee-related products and services:
             selling high-quality coffee beans, selling the Morning capsule
             coffee machine, renting coffee machines for cafés and other
@@ -88,7 +88,7 @@
       <div class="block-content row">
         <div class="block-content-text">
           <span class="list-title">Main objectives of the project</span>
-          <ul class="list small">
+          <ul class="list small animate-left">
             <li>
               Conduct 7+ interviews with existing Fresh Black customers from
               each team
@@ -143,7 +143,7 @@
       <h2>
         analysis of the <span class="accent-header">existing website</span>
       </h2>
-      <p class="text">
+      <p class="text animate-left">
         After a detailed analysis of the existing Fresh Black website, I
         identified several areas that needed improvement. I reviewed the
         homepage and navigation, product pages, checkout process, shopping cart,
@@ -167,7 +167,7 @@
       <div class="container">
         <h2>Competitor <span style="color: white">analysis</span></h2>
         <div class="block-content row">
-          <div class="block-content-text">
+          <div class="block-content-text animate-left">
             <p class="text">
               I personally analyzed 5 Ukrainian competitor websites and 5
               European ones.<br /><br />
@@ -205,7 +205,7 @@
         >
           <img src="images/freshblack/interview.png" alt="" />
         </a>
-        <div class="block-content-text">
+        <div class="block-content-text animate-right">
           <p class="text">
             The main goal of the in-depth user interviews was to understand the
             experience of Fresh Black Coffee website users, identify their pain
@@ -245,7 +245,7 @@
         </p>
       </h2>
       <div class="block-content row">
-        <div class="block-content-text">
+        <div class="block-content-text animate-left">
           <img src="images/freshblack/ok-green.svg" alt="" class="ok" />
           <ul class="list small">
             <li>
@@ -295,7 +295,7 @@
     <section class="container hypothesis-development">
       <h2>Hypothesis <span class="accent-header">development</span></h2>
       <div class="block-content row">
-        <div class="block-content-text">
+        <div class="block-content-text animate-left">
           <p class="text">
             Based on quotes from research, interviews, and user testing,
             multiple hypotheses were formed for the homepage, catalog, product
@@ -329,7 +329,7 @@
     <section class="container user-testing">
       <h2>user <span class="accent-header">testing</span></h2>
       <div class="block-content row">
-        <div class="block-content-text">
+        <div class="block-content-text animate-left">
           <p class="text">
             Evaluation of the current user-friendly design in real-world
             conditions for both website and mobile application
@@ -377,7 +377,7 @@
             playsinline
           ></video>
         </div>
-        <div class="block-content-text">
+        <div class="block-content-text animate-right">
           <p>
             As part of the UX research me with my team conducted an analysis of
             the Fresh Black Coffee website to identify its strengths and
@@ -396,7 +396,7 @@
     <section class="container solution">
       <h2>SolutionS <span class="accent-header">presentation</span></h2>
       <div class="block-content row">
-        <div class="block-content-text">
+        <div class="block-content-text animate-left">
           <p>
             In the presentation for the CEO of Frech Black Coffee I presented
             the research findings, clearly outlined the identified issues and
@@ -427,14 +427,14 @@
         <h2>results</h2>
         <div class="block-content row">
           <div class="block-content-text">
-            <p>
+            <p class="animate-left">
               Recommendations are based on real data, which will significantly
               improve the usability of the site and, as a result, increase the
               number of successful transactions. These solutions are aimed at
               increasing customer satisfaction and optimizing the purchasing
               process
             </p>
-            <ul class="list small">
+            <ul class="list small animate-left">
               <p>
                 During the research, my team and I were focused on analyzing the
                 current user experience on the Frech Black Coffee website. We
@@ -484,7 +484,7 @@
         <h2 style="color: white">
           Next <span class="accent-header">project</span>
         </h2>
-        <div class="card-grid">
+        <div class="card-grid animate-up">
           <a href="#" class="card-link">
             <div class="card-face digitalist">
               <h1>DIGITALIST</h1>
@@ -507,7 +507,10 @@
               </p>
             </div>
           </a>
-
+          <div class="footer-flower">
+            <img class="ellipse" src="images/Ellipse-footer.png" alt="" />
+            <img class="flower" src="images/flower-footer.png" alt="" />
+          </div>
           <a href="#" class="card-link">
             <div class="card-face pulesfit">
               <h1>pulesfit</h1>
@@ -547,6 +550,38 @@
         },
         slidesPerView: 1, // или 'auto', если адаптив
         spaceBetween: 150,
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const animateOnScroll = () => {
+          const observer = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("active");
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            {
+              threshold: 0.3,
+            }
+          );
+
+          const targets = document.querySelectorAll(
+            ".animate-left, .animate-right, .animate-up"
+          );
+          targets.forEach((target) => observer.observe(target));
+        };
+
+        if (window.location.hash) {
+          setTimeout(() => {
+            animateOnScroll();
+          }, 300);
+        } else {
+          animateOnScroll();
+        }
       });
     </script>
   </body>

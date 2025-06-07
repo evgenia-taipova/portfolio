@@ -50,7 +50,7 @@
             <li class="main-item">UX Research</li>
           </ul>
         </div>
-        <div class="main-right">
+        <div class="main-right animate-up">
           <p>
             I’m Iryna Kvitka, a UX/UI designer, who knows that beauty without
             usability is just a pretty picture. That’s why I create interfaces
@@ -131,7 +131,7 @@
     <section class="container about-section" id="about">
       <div class="about-main">
         <h2><strong class="accent-header">about</strong> me</h2>
-        <div class="about">
+        <div class="about animate-up">
           <div class="img-border">
             <img src="images/photo-about.png" alt="" />
           </div>
@@ -286,12 +286,8 @@
             (entries, observer) => {
               entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                  if (entry.target.classList.contains("about")) {
-                    entry.target.classList.add("animate-up");
-                  } else if (entry.target.classList.contains("main-right")) {
-                    entry.target.classList.add("animate-up");
-                  }
-                  observer.unobserve(entry.target); // Отключаем после анимации
+                  entry.target.classList.add("active");
+                  observer.unobserve(entry.target);
                 }
               });
             },
@@ -300,15 +296,16 @@
             }
           );
 
-          const targets = document.querySelectorAll(".about, .main-right");
+          const targets = document.querySelectorAll(
+            ".animate-left, .animate-right, .animate-up"
+          );
           targets.forEach((target) => observer.observe(target));
         };
 
-        // Отложим запуск, если якорь указан в URL
         if (window.location.hash) {
           setTimeout(() => {
             animateOnScroll();
-          }, 300); // Подождать, пока браузер прокрутит
+          }, 300);
         } else {
           animateOnScroll();
         }

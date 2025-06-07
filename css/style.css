@@ -694,28 +694,6 @@ section h2 {
   padding-bottom: 16px;
 }
 
-.footer-flower {
-  position: relative;
-  .flower {
-    position: absolute;
-    bottom: -16px;
-    left: 0;
-    width: 262px;
-    height: 251px;
-    object-fit: contain;
-    animation: floatFlowerFooter 6s ease-in-out infinite;
-  }
-
-  .ellipse {
-    position: absolute;
-    bottom: -18px;
-    left: 0;
-    width: 400px;
-    height: 400px;
-    object-fit: contain;
-    z-index: -1;
-  }
-}
 @keyframes floatFlowerFooter {
   0% {
     transform: rotate(0deg);
@@ -1268,46 +1246,39 @@ section h2 {
 }.skill-item.seventeen {
 } */
 
+/* Общее начальное состояние */
+.animate-left,
+.animate-right,
 .animate-up {
-  animation: slideInUp 2s ease-out forwards;
+  opacity: 0;
 }
 
-@keyframes slideInUp {
-  from {
-    transform: translateY(80px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+/* Слева */
 .animate-left {
-  animation: slideInLeft 1.5s ease-out forwards;
+  transform: translateX(-100px);
+  transition: opacity 0.6s ease-out, transform 1.4s ease-out;
+}
+.animate-left.active {
+  opacity: 1;
+  transform: translateX(0);
 }
 
+/* Справа */
 .animate-right {
-  animation: slideInRight 1.5s ease-out forwards;
+  transform: translateX(100px);
+  transition: opacity 0.6s ease-out, transform 1.4s ease-out;
+}
+.animate-right.active {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-80px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+/* Снизу */
+.animate-up {
+  transform: translateY(80px);
+  transition: opacity 0.6s ease-out, transform 1.4s ease-out;
 }
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(80px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.animate-up.active {
+  opacity: 1;
+  transform: translateY(0);
 }

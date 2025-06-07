@@ -197,13 +197,20 @@ h2.customer-title {
 }
 .figma-link {
   text-decoration: underline;
+  &:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
 }
+/* .competitor-analysis .figma-link:hover {
+} */
 section img {
   width: 100%;
 }
 
 .footer {
   justify-content: end;
+  padding-bottom: 70px;
 }
 .stages img {
   margin-top: 50px;
@@ -388,3 +395,37 @@ section img {
   width: 480px;
   height: auto;
 } */
+
+.next-project {
+  padding-top: 40px;
+  position: relative;
+}
+
+.next-project .footer-flower {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .flower {
+    position: absolute;
+    right: 42px;
+    top: 42px;
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    animation: floatFlowerFooter 6s ease-in-out infinite;
+    z-index: 0;
+  }
+
+  .ellipse {
+    position: absolute;
+    right: 0;
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+  }
+}
+
+.card-link {
+  z-index: 1;
+}

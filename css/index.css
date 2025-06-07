@@ -40,3 +40,26 @@
 h2 {
   font-size: 200px;
 }
+
+.footer-flower {
+  position: relative;
+  .flower {
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 262px;
+    height: 251px;
+    object-fit: contain;
+    animation: floatFlowerFooter 6s ease-in-out infinite;
+  }
+
+  .ellipse {
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    z-index: -1;
+  }
+}
