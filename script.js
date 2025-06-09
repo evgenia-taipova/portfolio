@@ -28,3 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
     animateOnScroll();
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollBtn = document.querySelector(".scroll-up");
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});
