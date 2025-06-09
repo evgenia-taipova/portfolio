@@ -92,10 +92,10 @@ h2 {
 
 .top-image video {
   position: absolute;
-  top: 5%; /* подберите под изображение */
-  left: 12%; /* подберите под изображение */
-  width: 76%; /* подберите под изображение */
-  height: auto; /* подберите под изображение */
+  top: 5%;
+  left: 12%; 
+  width: 76%; 
+  height: auto; 
   object-fit: contain;
 
   pointer-events: none;

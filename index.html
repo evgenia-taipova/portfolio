@@ -16,8 +16,7 @@
 
     <title>Portfolio</title>
 
-    <script src="script.js" defer></script>
-    <script src="/menu.js"></script>
+    <script src="script.js"></script>
   </head>
   <body>
     <header class="header">
@@ -279,37 +278,5 @@
         <a href=""><img src="images/be.svg" alt="" /></a>
       </div>
     </footer>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const animateOnScroll = () => {
-          const observer = new IntersectionObserver(
-            (entries, observer) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add("active");
-                  observer.unobserve(entry.target);
-                }
-              });
-            },
-            {
-              threshold: 0.3,
-            }
-          );
-
-          const targets = document.querySelectorAll(
-            ".animate-left, .animate-right, .animate-up"
-          );
-          targets.forEach((target) => observer.observe(target));
-        };
-
-        if (window.location.hash) {
-          setTimeout(() => {
-            animateOnScroll();
-          }, 300);
-        } else {
-          animateOnScroll();
-        }
-      });
-    </script>
   </body>
 </html>

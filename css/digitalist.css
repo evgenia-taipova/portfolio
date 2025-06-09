@@ -1,0 +1,253 @@
+:root {
+  --primary-color: #20af00;
+  --secondary-color: #c0c0c0;
+  --text-color: #fff;
+  --background-color: #202a24;
+  --accent-color: #5eff95;
+}
+body {
+  font-size: 24px;
+}
+
+.header {
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 20px 0;
+
+  color: #fff;
+  /* border-bottom: 2px solid #1e2823; */
+  background: #1b1b1b;
+
+  /* border-bottom: 2px solid transparent;  */
+  /* border-image-slice: 1; */
+  /* border-image-source: linear-gradient(90.14deg, #262626 0.12%, #5eff95 98.41%); */
+
+  position: relative;
+  cursor: pointer;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+
+  background: linear-gradient(90deg, #20af00 0%, #262626 50%, #20af00 100%);
+  background-size: 200% 100%;
+  background-position: right;
+
+  transition: background-position 0.8s ease;
+}
+
+.header:hover::after {
+  background-position: left;
+}
+
+h2 {
+  font-size: 128px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: stretch;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-top: 130px;
+  padding-bottom: 90px;
+  h2 {
+    line-height: 1.2;
+  }
+}
+.top-text {
+  max-width: 500px;
+  line-height: 150%;
+  font-size: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: -20px;
+}
+.top-text-content p {
+  max-width: 360px;
+}
+.top-text-info {
+  color: #647279;
+  margin-top: auto;
+  margin-bottom: 40px;
+}
+.top-image {
+  flex: 1;
+}
+.top-image {
+  position: relative;
+  display: inline-block;
+}
+
+.top-image img {
+  display: block;
+  width: 100%;
+}
+
+.top-image video {
+  position: absolute;
+  top: 5%;
+  left: 12%;
+  width: 76%;
+  height: auto;
+  object-fit: contain;
+
+  pointer-events: none;
+}
+.accent-header {
+  color: var(--primary-color);
+}
+h2.customer-title {
+  line-height: 1.2;
+}
+.customer-text {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  span {
+    width: fit-content;
+    white-space: nowrap;
+  }
+}
+.customer-text p {
+  font-size: 24px;
+  line-height: 1.2;
+  font-family: "NAMU Pro", sans-serif;
+  text-transform: none;
+  display: inline-block;
+}
+.block-content {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  padding-top: 24px;
+  .column {
+    flex-direction: column;
+  }
+}
+.customer-block {
+  .list-title {
+    text-transform: uppercase;
+    padding-top: 24px;
+  }
+}
+.block-content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.list {
+  min-width: 460px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  li {
+    position: relative;
+    padding-left: 16px;
+    line-height: 1.2;
+  }
+  li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="5" fill="%2323B32D"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+  }
+}
+.list.small {
+  font-size: 15px;
+  max-width: 460px;
+}
+section img {
+  width: 100%;
+}
+
+.customer-block {
+  padding-bottom: 0 !important;
+  .block-content {
+    gap: 290px;
+    justify-content: start;
+  }
+}
+.sitemap {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.sitemap img {
+  max-width: 940px;
+  align-self: flex-end;
+}
+
+.warframes {
+  position: relative;
+  padding-bottom: 30px;
+  .figma-link {
+    display: block;
+    align-self: flex-end;
+    margin-bottom: 60px;
+  }
+  .top-image {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 40px;
+    max-width: 900px;
+  }
+}
+
+.responsive-design img {
+  margin-top: 40px;
+}
+.competitor-analysis h2 p {
+  max-width: 449px;
+}
+.competitor-analysis span {
+  font-size: 128px;
+  text-transform: uppercase;
+  font-family: Anton;
+  margin-bottom: 48px;
+}
+.competitor-analysis .block-content {
+  justify-content: start;
+  gap: 126px;
+}
+.competitor-analysis .block-content-text,
+.competitor-analysis .list.small {
+  max-width: 490px;
+}
+.competitor-analysis .list.small p {
+  margin-bottom: 8px;
+}
+
+.competitor-analysis img {
+  max-height: 570px;
+  width: auto;
+  object-fit: contain;
+}
+
+.competitor-analysis .figma-link {
+  margin-top: auto;
+}
+
+.moodboard h2 p {
+  max-width: 553px;
+}

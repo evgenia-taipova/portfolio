@@ -23,10 +23,9 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/freshblack.css" />
 
-    <title>Portfolio</title>
+    <title>Freshblack</title>
 
-    <script src="script.js" defer></script>
-    <script src="/menu.js"></script>
+    <script src="script.js"></script>
   </head>
   <body>
     <header class="header">
@@ -550,38 +549,6 @@
         },
         slidesPerView: 1, // или 'auto', если адаптив
         spaceBetween: 150,
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const animateOnScroll = () => {
-          const observer = new IntersectionObserver(
-            (entries, observer) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add("active");
-                  observer.unobserve(entry.target);
-                }
-              });
-            },
-            {
-              threshold: 0.3,
-            }
-          );
-
-          const targets = document.querySelectorAll(
-            ".animate-left, .animate-right, .animate-up"
-          );
-          targets.forEach((target) => observer.observe(target));
-        };
-
-        if (window.location.hash) {
-          setTimeout(() => {
-            animateOnScroll();
-          }, 300);
-        } else {
-          animateOnScroll();
-        }
       });
     </script>
   </body>
