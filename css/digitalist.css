@@ -96,7 +96,7 @@ h2 {
   width: 100%;
 }
 
-.top-image video {
+.top-image a {
   position: absolute;
   top: 5%;
   left: 12%;
@@ -104,7 +104,11 @@ h2 {
   height: auto;
   object-fit: contain;
 
-  pointer-events: none;
+  video {
+    display: block;
+    width: 100%;
+    pointer-events: none;
+  }
 }
 .accent-header {
   color: var(--primary-color);
@@ -231,6 +235,7 @@ section img {
 }
 .figma-link {
   text-decoration: underline;
+  font-size: 20px;
   &:hover {
     color: var(--primary-color);
     text-decoration: none;
@@ -356,4 +361,40 @@ section img {
 
   line-height: 0;
   margin-top: -3px;
+}
+.results {
+  padding-bottom: 0;
+}
+.results .top-image {
+  margin-left: -90px;
+  img {
+    display: block;
+    width: 100%;
+  }
+  a {
+    top: 4.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+  }
+}
+.results .block-content-text {
+  justify-content: end;
+  align-items: start;
+  max-width: 320px;
+  margin-bottom: 80px;
+  .list {
+    min-width: unset;
+  }
+  img {
+    height: 80px;
+    width: auto;
+    margin-left: -24px;
+  }
+}
+
+.results .tetris {
+  width: 78px;
+  align-self: flex-end;
+  margin-bottom: 80px;
 }
