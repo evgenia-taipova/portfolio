@@ -58,9 +58,10 @@ h2 {
   margin: 0 auto;
   padding-left: 2rem;
   padding-top: 130px;
-  padding-bottom: 90px;
+  padding-bottom: 50px;
   h2 {
-    line-height: 1.2;
+    line-height: 1.1;
+    margin-bottom: 8px;
   }
 }
 .top-text {
@@ -70,16 +71,17 @@ h2 {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-top: -20px;
+  justify-content: start;
+  gap: 48px;
+  /* margin-top: -20px; */
 }
 .top-text-content p {
   max-width: 360px;
 }
 .top-text-info {
   color: #647279;
-  margin-top: auto;
-  margin-bottom: 40px;
+  /* margin-top: auto; */
+  /* margin-bottom: 40px; */
 }
 .top-image {
   flex: 1;
@@ -206,7 +208,7 @@ section img {
 }
 .warframes {
   position: relative;
-  padding-bottom: 30px;
+  padding-bottom: 30px !important;
   .figma-link {
     display: flex;
     flex-direction: column;
