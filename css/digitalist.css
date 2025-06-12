@@ -89,11 +89,13 @@ h2 {
 .top-image {
   position: relative;
   display: inline-block;
+
 }
 
 .top-image img {
   display: block;
   width: 100%;
+  aspect-ratio: 16 / 10.4;
 }
 
 .top-image a {
@@ -108,6 +110,12 @@ h2 {
     display: block;
     width: 100%;
     pointer-events: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+    object-fit: cover; /* можно заменить на contain, если хочешь видеть всё видео */
+    object-position: top;
   }
 }
 .accent-header {
