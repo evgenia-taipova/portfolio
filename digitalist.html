@@ -10,10 +10,21 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/digitalist.css" />
@@ -197,7 +208,11 @@
       </h2>
       <div class="block-content row">
         <ul class="list small">
-          <img src="images/digitalist/moodboard-tetris.svg" alt="" />
+          <img
+            src="images/digitalist/moodboard-tetris.svg"
+            alt=""
+            style="width: 60px"
+          />
           <li>Focus points: no illustrations</li>
           <li>Minimalism</li>
           <li>Simple emojis</li>
@@ -205,7 +220,13 @@
             A standard font needs to be chosen, as they don’t have a custom one
           </li>
         </ul>
-        <img src="images/digitalist/moodboard.png" alt="" />
+        <a
+          data-fancybox="gallery"
+          href="images/digitalist/moodboard.png"
+          style="max-width: 770px"
+        >
+          <img src="images/digitalist/moodboard.png" alt=""
+        /></a>
       </div>
     </section>
     <section class="container warframes">
@@ -241,7 +262,7 @@
         </div>
       </div>
     </section>
-    <section class="container">
+    <section class="container ui-design">
       <h2 class="customer-title customer-text">
         UI <span class="accent-header">design</span>
         <p>
@@ -250,6 +271,117 @@
           12-column grid, which provides logical and convenient navigation.
         </p>
       </h2>
+
+      <div class="block-content row">
+        <div class="block-content-text">
+          <img class="tetris" src="images/digitalist/Rhode Island.svg" alt="" />
+          <ul class="list small">
+            <li>
+              A dark theme with green accents, in accordance with the client's
+              preferences.
+            </li>
+            <li>
+              Information blocks are designed as glass-effect cards, emphasizing
+              transparency and clarity while structuring key data on the site
+            </li>
+            <li>
+              Colorful Tetris-style shapes symbolize the ease and structure of
+              project work, fostering a friendly vibe and softening the formal
+              business style.
+            </li>
+            <li>
+              IMB Graphik conveys technological sophistication and compliance
+              with modern IT standards
+            </li>
+            <li>
+              Nunito adds friendliness and flexibility, reflecting a comfortable
+              collaboration with clients
+            </li>
+          </ul>
+        </div>
+        <div class="block-content-text">
+          <div class="typography">
+            <h3>Typography</h3>
+
+            <div class="font-block first-font">
+              <p class="font-title">H1 – IBM Plex Mono</p>
+              <p>
+                <span class="semibold">Semibold</span>
+                <span class="bold">Bold</span>
+              </p>
+            </div>
+
+            <div class="font-block second-font">
+              <p class="font-title">Body – Nunito Sans</p>
+              <p>
+                <span class="regular">Regular</span>
+                <span class="medium">Medium</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="colors">
+            <h3>Colors</h3>
+            <div class="styles">
+              <div
+                class="color-block"
+                style="
+                  background-color: #202a25;
+                  border: 1px solid rgba(174, 172, 172, 0.17);
+                "
+              >
+                #202A25
+              </div>
+              <div
+                class="color-block"
+                style="background-color: #fdeedc; color: #202a25"
+              >
+                #FDEEDC
+              </div>
+              <div class="color-block" style="background-color: #20af00">
+                #20AF00
+              </div>
+              <div class="color-block glass-effect">Glass effect</div>
+            </div>
+          </div>
+        </div>
+        <div class="block-content-text">
+          <img
+            class="tetris"
+            src="images/digitalist/moodboard-tetris.svg"
+            alt=""
+            style="transform: rotate(180deg)"
+          />
+          <img
+            class="tetris"
+            src="images/digitalist/sitemap-Ricky.svg"
+            alt=""
+          />
+          <div class="icon">
+            <h3>Icon</h3>
+            <img class="icon-img" src="images/digitalist/icons.svg" alt="" />
+          </div>
+        </div>
+        <div class="block-content-text">
+          <div>
+            <h3>Button</h3>
+            <button class="ui-button">приєднАТИСЬ</button>
+            <button class="ui-button hover">приєднАТИСЬ</button>
+          </div>
+
+          <div class="slider">
+            <h3>Slider</h3>
+            <img src="images/digitalist/slider.svg" alt="" />
+            <div class="tetris-wrapper">
+              <img
+                class="tetris"
+                src="images/digitalist/ui-ellipse.svg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="container">
       <h2 class="customer-title customer-text">
@@ -259,6 +391,59 @@
           gradients—creates a sense of digital dynamism and growth.
         </p>
       </h2>
+      <div class="">
+        <!-- Верхняя строка: текст + кнопки -->
+        <div class="top-row">
+          <p class="section-text">
+            Brand reinforcement—the site appears both friendly and professional,
+            reflecting expertise in IT consulting.
+          </p>
+          <div class="swiper-buttons">
+            <div class="swiper-button-prev swiper-prev-visual"></div>
+            <div class="swiper-button-next swiper-next-visual"></div>
+          </div>
+        </div>
+
+        <!-- Свайпер ниже -->
+        <div class="swiper visualSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="images/digitalist/visual-content 2/image.png"
+                alt="Image 1"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="images/digitalist/visual-content 2/image-1.png"
+                alt="Image 2"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="images/digitalist/visual-content 2/image-2.png"
+                alt="Image 3"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="images/digitalist/visual-content 2/image-3.png"
+                alt="Image 4"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/digitalist/visual-content 2/image-4.png"Image 5"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="images/digitalist/visual-content 2/{F536B016-B973-4206-B3F2-8182238E15C6} 1.png"
+                alt="Image 6"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="responsive-design">
       <h2 class="customer-title customer-text container">
@@ -326,7 +511,7 @@
     <section class="next-project">
       <div class="container">
         <h2 style="color: white">
-          Next <span class="accent-header">project</span>
+          Next <span class="accent-header">projects</span>
         </h2>
         <div class="card-grid animate-up">
           <a href="#" class="card-link">
@@ -378,5 +563,29 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".visualSwiper", {
+        spaceBetween: 30,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          1200: {
+            slidesPerView: 4,
+          },
+          992: {
+            slidesPerView: 3,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          0: {
+            slidesPerView: 1,
+          },
+        },
+      });
+    </script>
   </body>
 </html>

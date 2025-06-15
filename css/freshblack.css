@@ -339,11 +339,16 @@ section img {
   max-width: 490px;
 }
 
-.results {
+.results,
+.user-testing {
   padding-bottom: 70px;
   padding-top: 40px;
+  .accent-header {
+    color: white;
+  }
 }
-.results .block-content-text {
+.results .block-content-text,
+.user-testing .block-content-text {
   max-width: 630px;
   justify-content: space-between;
   line-height: 1.3;
@@ -351,6 +356,9 @@ section img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 400px 100%;
+}
+
+.results .block-content-text {
   .list {
     max-width: unset;
     li::before {
